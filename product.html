@@ -487,8 +487,10 @@
 
         function openCatalog() {
             document.getElementById('catalogModalTitle').textContent = machine.name + ' — Catalog';
+            const pdfAbsoluteUrl = window.location.origin + '/' + encodeURI(machine.pdf);
+            const viewerUrl = 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(pdfAbsoluteUrl);
             document.getElementById('catalogModalBody').innerHTML =
-                `<iframe src="${encodeURI(machine.pdf)}"></iframe>`;
+                `<iframe src="${viewerUrl}"></iframe>`;
             document.getElementById('catalogModal').classList.add('active');
         }
 
