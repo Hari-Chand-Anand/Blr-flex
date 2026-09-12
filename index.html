@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari Chand Anand & Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #0c2136;
+            --navy-deep: #081625;
+            --gold: #c6a15b;
+            --gold-light: #e2c98a;
+            --cream: #faf7f2;
+            --ink: #1c2530;
+            --muted: #7c8797;
+            --hairline: #e7e1d6;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            min-height: 100vh;
+        }
+
+        .wrap {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px 18px 40px;
+        }
+
+        .header {
+            position: relative;
+            background:
+                radial-gradient(circle at 15% 0%, rgba(198,161,91,0.12), transparent 55%),
+                linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+            border-radius: 18px;
+            padding: 32px 26px 28px;
+            color: white;
+            margin-bottom: 22px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(8,22,37,0.25);
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            inset: 8px;
+            border: 1px solid rgba(198,161,91,0.28);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .crest-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .crest {
+            width: 44px;
+            height: 44px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .crest span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--gold-light);
+        }
+
+        .brand-text .name {
+            font-size: 13.5px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            color: #f1ece1;
+        }
+
+        .brand-text .est {
+            font-size: 10.5px;
+            color: var(--gold-light);
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            opacity: 0.85;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.25;
+        }
+
+        .divider-gold {
+            width: 46px;
+            height: 2px;
+            background: var(--gold);
+            margin: 14px 0 4px;
+            border-radius: 2px;
+        }
+
+        .header .tag {
+            font-size: 12px;
+            color: rgba(255,255,255,0.55);
+        }
+
+        .section-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 4px 4px 12px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 1px 3px rgba(12,33,54,0.06);
+            border: 1px solid var(--hairline);
+            border-left: 3px solid transparent;
+            transition: box-shadow 0.25s ease, transform 0.25s ease, border-left-color 0.25s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 24px rgba(12,33,54,0.12);
+            transform: translateY(-2px);
+            border-left-color: var(--gold);
+        }
+
+        .card .icon-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-light);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .card .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .card .subtitle {
+            font-size: 12.5px;
+            color: var(--muted);
+        }
+
+        .card .chevron {
+            color: var(--gold);
+            font-size: 18px;
+            margin-left: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 26px 10px 6px;
+        }
+
+        .footer .line {
+            width: 60px;
+            height: 1px;
+            background: var(--hairline);
+            margin: 0 auto 14px;
+        }
+
+        .footer .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 12.5px;
+            color: var(--navy);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .footer .sub {
+            font-size: 11px;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="crest-row">
+                <div class="crest"><span>HCA</span></div>
+                <div class="brand-text">
+                    <div class="name">HARI CHAND ANAND &amp; CO.</div>
+                    <div class="est">Est. 1910 &nbsp;·&nbsp; Bangalore</div>
+                </div>
+            </div>
+            <h1>Machine Catalog &amp; Support</h1>
+            <div class="divider-gold"></div>
+            <div class="tag">Precision Engineering Since 1910</div>
+        </div>
+
+        <div class="section-label">Our Machines</div>
+
+        <a class="card" href="product.html?m=dy-r9">
+            <div class="icon-badge">R9</div>
+            <div>
+                <div class="title">DY R9</div>
+                <div class="subtitle">Catalog · Video · Support</div>
+            </div>
+            <div class="chevron">›</div>
+        </a>
+
+        <a class="card" href="product.html?m=fb450">
+            <div class="icon-badge">FB</div>
+            <div>
+                <div class="title">FB450</div>
+                <div class="subtitle">Catalog · Video · Support</div>
+            </div>
+            <div class="chevron">›</div>
+        </a>
+
+        <a class="card" href="product.html?m=pl-puller">
+            <div class="icon-badge">PL</div>
+            <div>
+                <div class="title">PL PULLER</div>
+                <div class="subtitle">Catalog · Video · Support</div>
+            </div>
+            <div class="chevron">›</div>
+        </a>
+
+        <div class="footer">
+            <div class="line"></div>
+            <div class="tagline">Hari Chand Anand &amp; Co.</div>
+            <div class="sub">A Legacy of Trust Since 1910</div>
+        </div>
+    </div>
+</body>
+</html>
