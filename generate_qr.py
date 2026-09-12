@@ -12,8 +12,7 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 
 # ---- CONFIG ----
-# Change this to your live Vercel URL after deployment, e.g. "https://your-app.vercel.app"
-BASE_URL = "http://localhost:8080"
+BASE_URL = "https://blr-flex.vercel.app"
 
 OUTPUT_DIR = "qr-codes"
 
